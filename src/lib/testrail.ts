@@ -12,6 +12,14 @@ export class TestRail {
 
   constructor(private options: TestRailOptions) {
     this.base = `https://${options.domain}/index.php?/api/v2`;
+    axios.interceptors.response.use(function (response) {
+      response.data = response.data.runs || [];
+
+      return response;
+    }, function (error) {
+
+      return Promise.reject(error);
+    });
   }
 
   public isRunToday() {

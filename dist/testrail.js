@@ -7,6 +7,12 @@ var TestRail = /** @class */ (function () {
     function TestRail(options) {
         this.options = options;
         this.base = "https://" + options.domain + "/index.php?/api/v2";
+        axios.interceptors.response.use(function (response) {
+            response.data = response.data.runs || [];
+            return response;
+        }, function (error) {
+            return Promise.reject(error);
+        });
     }
     TestRail.prototype.isRunToday = function () {
         var _this = this;

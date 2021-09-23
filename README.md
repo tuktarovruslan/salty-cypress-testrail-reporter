@@ -70,6 +70,9 @@ it("Can authenticate a valid userC123", ...
 
 **runName**: _string_ (optional) name of the Testrail run.
 
+# Functionality Update 09/23/2021
+Added Axios interceptor in according to the new data format response from testrail API.
+
 # Functionality Update 01/04/2019
 We were having issues where we wanted to run a test run once a day using multiple spec files.  However, when `createTestRun: true`, the testrail reporter would create a testrun for each spec file which is not what we wanted.
 

@@ -1,15 +1,21 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CypressTestRailReporter = void 0;
 var mocha_1 = require("mocha");
 var moment = require("moment");
 var testrail_1 = require("./testrail");
@@ -47,7 +53,7 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
         });
         runner.on('pass', function (test) {
             var _a;
-            var caseIds = shared_1.titleToCaseIds(test.title);
+            var caseIds = (0, shared_1.titleToCaseIds)(test.title);
             if (caseIds.length > 0) {
                 var results = caseIds.map(function (caseId) {
                     return {
@@ -61,7 +67,7 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
         });
         runner.on('fail', function (test) {
             var _a;
-            var caseIds = shared_1.titleToCaseIds(test.title);
+            var caseIds = (0, shared_1.titleToCaseIds)(test.title);
             if (caseIds.length > 0) {
                 var results = caseIds.map(function (caseId) {
                     return {

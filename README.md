@@ -16,7 +16,7 @@ Allows for options to create a new test run on **cypress run** or if you want th
 ## Install
 
 ```shell
-$ npm install salty-cypress-testrail-reporter --save-dev
+$ npm install sweety-cypress-testrail-reporter --save-dev
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ Add reporter to your `cypress.json`:
 ```json
 ...
 {
-  "reporter": "salty-cypress-testrail-reporter",
+  "reporter": "sweety-cypress-testrail-reporter",
   "reporterOptions": {
     "domain": "yourdomain.testrail.com",
     "username": "username",

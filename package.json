@@ -1,6 +1,6 @@
 {
   "name": "sweety-cypress-testrail-reporter",
-  "version": "1.3.13",
+  "version": "1.3.14",
   "description": "A Testrail reporter for cypress including TestRail API basic library",
   "main": "index.js",
   "private": false,
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tuktarovruslan/salty-cypress-testrail-reporter.git"
+    "url": "git+https://github.com/tuktarovruslan/sweety-cypress-testrail-reporter.git"
   },
   "scripts": {
     "tsc": "tsc",
@@ -35,8 +35,8 @@
     "rimraf": "^2.6.3",
     "typescript": "^4.4.3"
   },
-  "homepage": "https://github.com/tuktarovruslan/salty-cypress-testrail-reporter#readme",
+  "homepage": "https://github.com/tuktarovruslan/sweety-cypress-testrail-reporter#readme",
   "bugs": {
-    "url": "https://github.com/tuktarovruslan/salty-cypress-testrail-reporter/issues"
+    "url": "https://github.com/tuktarovruslan/sweety-cypress-testrail-reporter/issues"
   }
 }

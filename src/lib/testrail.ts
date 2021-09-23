@@ -13,7 +13,7 @@ export class TestRail {
   constructor(private options: TestRailOptions) {
     this.base = `https://${options.domain}/index.php?/api/v2`;
     axios.interceptors.response.use(function (response) {
-      response.data = response.data.runs || [];
+      response.data = Array.isArray(response.data) ? response.data : (response.data.runs || response.data);
 
       return response;
     }, function (error) {
@@ -32,7 +32,6 @@ export class TestRail {
           password: this.options.password,
       }
     }).then(response => {
-
         this.lastRunDate = moment.unix(response.data[0].created_on).format('MM/DD/YYYY')
         // set current date with same format as this.lastRunDate
         this.currentDate = moment(new Date()).format('L');

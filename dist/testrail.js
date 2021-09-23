@@ -9,7 +9,7 @@ var TestRail = /** @class */ (function () {
         this.options = options;
         this.base = "https://" + options.domain + "/index.php?/api/v2";
         axios.interceptors.response.use(function (response) {
-            response.data = response.data.runs || [];
+            response.data = Array.isArray(response.data) ? response.data : (response.data.runs || response.data);
             return response;
         }, function (error) {
             return Promise.reject(error);
